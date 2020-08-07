@@ -42,14 +42,25 @@ import Favorites from '../pages/Favorites';
         component={TeacherList} 
         options={{
           tabBarLabel: 'Proffys',
-          tabBarIcon: () => {
+          tabBarIcon: ({ color, size }) => {
             return (
-              <Ionicons name="ios-easel" />
+              <Ionicons name="ios-easel" size={size} color={color} />
             );
           }
         }}
        />
-       <Screen name="Favorites" component={Favorites} />
+       <Screen 
+        name="Favorites" 
+        component={Favorites} 
+        options={{
+          tabBarLabel: 'Favoritos',
+          tabBarIcon: ({ color, size }) => {
+            return (
+              <Ionicons name="ios-heart" size={size} color={color} />
+            );
+          }
+        }}
+       />
      </Navigator>
    )
  }
